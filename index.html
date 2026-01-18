@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="StopWatchHub - Precision time tools including Stopwatch, Countdown Timer, World Clock, and Pomodoro Timer for students and professionals.">
+    <title>StopWatchHub - Online Timing Tools</title>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- Header -->
+    <header class="site-header">
+        <div class="logo">StopWatchHub</div>
+        <nav class="main-nav">
+            <button class="nav-btn active" data-target="stopwatch">Stopwatch</button>
+            <button class="nav-btn" data-target="timer">Timer</button>
+            <button class="nav-btn" data-target="clock">Clock</button>
+            <button class="nav-btn" data-target="world-clock">World</button>
+            <button class="nav-btn" data-target="alarm">Alarm</button>
+            <button class="nav-btn" data-target="pomodoro">Pomodoro</button>
+        </nav>
+    </header>
+
+    <!-- AdSense Header Ad Placeholder -->
+    <div class="ad-container" aria-label="Advertisement">
+        <!-- AdSense Header Ad -->
+        <div class="ad-placeholder">Advertisement Space</div>
+    </div>
+
+    <!-- Main Content Area -->
+    <main class="app-container">
+        
+        <!-- Stopwatch Section -->
+        <section id="stopwatch" class="tool-section active">
+            <div class="card">
+                <h2>Stopwatch</h2>
+                <div class="time-display large-digits" id="sw-display">00:00:00.00</div>
+                <div class="controls">
+                    <button id="sw-start" class="btn primary">Start</button>
+                    <button id="sw-stop" class="btn secondary" disabled>Stop</button>
+                    <button id="sw-lap" class="btn outline" disabled>Lap</button>
+                    <button id="sw-reset" class="btn danger">Reset</button>
+                </div>
+                <div class="laps-container" id="sw-laps">
+                    <!-- Laps will appear here -->
+                </div>
+            </div>
+        </section>
+
+        <!-- Countdown Timer Section -->
+        <section id="timer" class="tool-section">
+            <div class="card">
+                <h2>Countdown Timer</h2>
+                <div class="input-group" id="timer-inputs">
+                    <div class="input-wrapper">
+                        <input type="number" id="timer-h" min="0" max="99" placeholder="00">
+                        <label>Hrs</label>
+                    </div>
+                    <div class="input-wrapper">
+                        <input type="number" id="timer-m" min="0" max="59" placeholder="00">
+                        <label>Min</label>
+                    </div>
+                    <div class="input-wrapper">
+                        <input type="number" id="timer-s" min="0" max="59" placeholder="00">
+                        <label>Sec</label>
+                    </div>
+                </div>
+                <div class="time-display large-digits hidden" id="timer-display">00:00:00</div>
+                <div class="controls">
+                    <button id="timer-start" class="btn primary">Start</button>
+                    <button id="timer-pause" class="btn secondary hidden">Pause</button>
+                    <button id="timer-reset" class="btn danger">Reset</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Digital Clock Section -->
+        <section id="clock" class="tool-section">
+            <div class="card">
+                <h2>Current Time</h2>
+                <div class="time-display super-large-digits" id="clock-display">00:00:00</div>
+                <div class="date-display" id="clock-date">Monday, January 1, 2024</div>
+            </div>
+        </section>
+
+        <!-- World Clock Section -->
+        <section id="world-clock" class="tool-section">
+            <h2>World Clock</h2>
+            <div class="grid-layout" id="world-clock-grid">
+                <!-- Cities will be injected by JS -->
+            </div>
+        </section>
+
+        <!-- Alarm Section -->
+        <section id="alarm" class="tool-section">
+            <div class="card">
+                <h2>Simple Alarm</h2>
+                <div class="input-group">
+                    <input type="time" id="alarm-time">
+                </div>
+                <div class="status-msg" id="alarm-status">No alarm set</div>
+                <div class="controls">
+                    <button id="alarm-set" class="btn primary">Set Alarm</button>
+                    <button id="alarm-clear" class="btn danger" disabled>Clear Alarm</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Pomodoro Section -->
+        <section id="pomodoro" class="tool-section">
+            <div class="card">
+                <h2>Pomodoro Timer</h2>
+                <div class="mode-toggle">
+                    <button class="mode-btn active" data-mode="work">Work (25:00)</button>
+                    <button class="mode-btn" data-mode="break">Break (05:00)</button>
+                </div>
+                <div class="time-display large-digits" id="pomo-display">25:00</div>
+                <div class="controls">
+                    <button id="pomo-start" class="btn primary">Start</button>
+                    <button id="pomo-reset" class="btn danger">Reset</button>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- AdSense Sidebar/Footer Ad Placeholder -->
+    <div class="ad-container" aria-label="Advertisement">
+        <!-- AdSense Sidebar Ad -->
+        <div class="ad-placeholder">Advertisement Space</div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="site-footer">
+        <div class="footer-links">
+            <a href="#about">About</a>
+            <a href="#contact">Contact</a>
+            <a href="#privacy">Privacy Policy</a>
+        </div>
+        <div class="legal-text">
+            <h3>Privacy Policy</h3>
+            <p>This site does not collect personal data. Cookies may be used by third-party vendors, including Google, to serve ads based on prior visits to our website.</p>
+        </div>
+        <p>&copy; 2024 StopWatchHub. All rights reserved.</p>
+        
+        <!-- AdSense Footer Ad -->
+        <div class="ad-placeholder mini">Footer Ad</div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
